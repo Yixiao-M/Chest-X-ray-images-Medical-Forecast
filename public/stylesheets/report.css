@@ -1,0 +1,30 @@
+h1 {
+    background-color: lightblue;
+    text-align: center;
+    font-size: 80px;
+}
+
+.container {
+    margin: 60px auto;
+    width: 600px;
+    height: 300px;
+    border: 1px solid #000;
+}
+
+polyline {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2px;
+    stroke-dasharray: 5px;
+}
+
+#reference {
+    margin: 60px auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    margin: 60px auto;
+    text-align: center;
+}

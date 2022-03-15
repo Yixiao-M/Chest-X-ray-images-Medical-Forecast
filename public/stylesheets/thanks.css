@@ -1,0 +1,16 @@
+div {
+    text-align: center;
+    height: 200px;
+    line-height: 200px
+}
+
+p {
+    font-size: 40px;
+}
+
+button {
+    width: 160px;
+    height: 40px;
+    font-size: 20px;
+    background-color: lightskyblue;
+}

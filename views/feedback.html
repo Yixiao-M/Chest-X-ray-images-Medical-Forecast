@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="uft-8">
+    <title>Feedback</title>
+    <link rel='stylesheet' href='/stylesheets/feedback.css' />
+</head>
+
+<body>
+    <h1>Feedback</h1>
+    <form action="/feedback/thanks">
+        <div>
+            <label for="reference">Please enter your reference No:</label>
+            <input type="text" , name="reference" , id='reference' required><br />
+        </div>
+        <div>
+            <label for="label">You were diagnosed as: </label>
+            <select name="label" id="label" required>
+                <option></option>
+                <option value="1">Normal</option>
+                <option value="0">Covid-19</option>
+                <option value="2">Pneumonia</option>
+                <option value="3">Tuberculosis</option>
+            </select><br />
+        </div>
+
+        <input type="submit" id="submit" value="submit">
+    </form>
+
+</body>
+
+</html>

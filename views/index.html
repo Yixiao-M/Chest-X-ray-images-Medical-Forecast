@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="uft-8">
+  <title>Medical forecast</title>
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+</head>
+
+<body>
+  <h1>Medical Forecast System</h1>
+  <div id='feedback'>
+    <button type="button" onclick="window.location.href='/feedback'">Feedback</button>
+  </div>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <h2>Step 1: please select your chest X-ray images</h2>
+    <input type="file" accept="image/*" name="image" size="50" onchange="previewFile()" id="img" required><br>
+    <img src="" height="500" alt="Image preview...">
+    <h2>Step 2: Please answer some relevant questions</h2>
+    <p>Do you have the following clinical symptoms?</p>
+    <label for="fever">Fever: </label>
+    <input type="radio" id=yes name=fever value="1" required />yes
+    <input type="radio" id=no name=fever value="0" required />no
+    <br>
+    <br>
+    <label for="cough">cough: </label>
+    <input type="radio" id=yes name=cough value="1" required />yes
+    <input type="radio" id=no name=cough value="0" required />no
+    <br>
+    <br>
+    <label for="fatigue">fatigue: </label>
+    <input type="radio" id=yes name=fatigue value="1" required />yes
+    <input type="radio" id=no name=fatigue value="0" required />no
+    <br>
+    <br>
+    <label for="sputum">sputum: </label>
+    <input type="radio" id=yes name=sputum value="1" required />yes
+    <input type="radio" id=no name=sputum value="0" required />no
+    <br>
+    <br>
+    <label for="dyspnea">dyspnea: </label>
+    <input type="radio" id=yes name=dyspnea value="1" required />yes
+    <input type="radio" id=no name=dyspnea value="0" required />no
+    <br>
+    <br>
+    <label for="hemoptysis">hemoptysis: </label>
+    <input type="radio" id=yes name=hemoptysis value="1" required />yes
+    <input type="radio" id=no name=hemoptysis value="0" required />no
+    <br>
+    <br>
+    <label for="chest_pain">chest pain: </label>
+    <input type="radio" id=yes name=chest_pain value="1" required />yes
+    <input type="radio" id=no name=chest_pain value="0" required />no
+    <br>
+    <br>
+    <label for="weight_loss">weight loss: </label>
+    <input type="radio" id=yes name=weight_loss value="1" required />yes
+    <input type="radio" id=no name=weight_loss value="0" required />no
+    <br>
+    <br>
+    <input type="checkbox" name="agree" id="agree" value="1">I agree that this website can save my data to imporve
+    algorithm and help more people
+    <br>
+    <br>
+    <input type="submit" value="Get your report" , id='submit'>
+  </form>
+  <script>
+    function previewFile() {
+      var preview = document.querySelector('img');
+      var file = document.querySelector('input[type=file]').files[0];
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+        preview.src = reader.result;
+      }, false);
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+
+</html>
