@@ -30,12 +30,7 @@ epochs = 100
 stepsperepoch=9
 validationsteps=1
 
-train_datagen = image.ImageDataGenerator(
-    rescale = 1./255,
-   # shear_range = 0.2,
-   # zoom_range = 0.2,
-    #horizontal_flip = True,
-)
+train_datagen = image.ImageDataGenerator(rescale = 1./255)
 test_datagen = image.ImageDataGenerator(rescale = 1./255)
 
 train_generator = train_datagen.flow_from_directory(
@@ -69,7 +64,7 @@ model = ResNet50(
     classifier_activation="softmax",
 )
 
-# model.summary()
+model.summary()
 model.compile(optimizer='RMSprop', loss='categorical_crossentropy', metrics=['accuracy'])
 
 hist = model.fit_generator(

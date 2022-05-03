@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs')
 
-/* GET report. */
+/* GET report. (test)*/
 router.get('/', function(req, res, next) {
   fs.readFile('./1.json', function(err, json) {
     if(err){

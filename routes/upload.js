@@ -31,7 +31,7 @@ router.post('/', upload.array('image', 40), function (req, res, next) {
     // get prediction from model
     filename = req.files[0].filename
     var fileFormat = (req.files[0].filename).split(".");
-    exec(`python3 ./chest_X-ray_predictor/predictor.py ${fileFormat[0]}`, function (error, stdout, stderr) {
+    exec(`python ./chest_X-ray_predictor/predictor.py ${fileFormat[0]}`, function (error, stdout, stderr) {
         if(error){
             console.error('error: ' + error);
         } else {
